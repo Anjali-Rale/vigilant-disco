@@ -3,28 +3,29 @@
 version: 2.1
 jobs:
   one:
-     docker:
-     - image: cimg/ruby:2.6.8
-     steps:
-       - checkout
-       - run:
+    docker:
+      - image: cimg/ruby:2.6.8
+    steps:
+      - checkout
+      - run:
           name: Fisrt Hello World
           command: echo "Its Anjali's Fisrt Hello World"
-       - run:
-           name: Sleep
-           command: sleep 25
+      - run:
+          name: Sleep
+          command: sleep 25
 
   two:
     docker:
-    - image: cimg/ruby3.0.2
-      steps:
-       - checkout
-       - run:
+      - image: cimg/ruby3.0.2
+    steps:
+      - checkout
+      - run:
           name: Second Hello
           command: echo "Its Anjali'..."
-       - run:
-           name: Sleep
-           command: sleep 15
+      - run:
+          name: Sleep
+          command: sleep 15
+
 workflows:
   one_and_two:
     jobs:
